@@ -1,0 +1,24 @@
+{
+    "name": "opensdk/jd",
+    "description": "京东API SDK",
+    "type": "libaray",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Ken.Zhang",
+            "email": "kenphp@yeah.net"
+        }
+    ],
+    "minimum-stability": "stable",
+    "require": {
+        "php": ">=7.0.0"
+    },
+    "require-dev": {
+        "php": ">=7.0.0"
+    },
+    "autoload": {
+        "psr-4": {
+            "JdSdk\\": "src/"
+        }
+    }
+}
