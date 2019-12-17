@@ -5,7 +5,7 @@
  * Date: 2018/10/17
  */
 
-namespace JdSdk;
+namespace JdSdk\request;
 
 class JdUnionOpenOrderBonusQueryRequest{
     private $is_sign            = true;

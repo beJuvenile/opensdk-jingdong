@@ -8,10 +8,10 @@
 require '../vendor/autoload.php';
 
 use JdSdk\JdClient;
-use JdSdk\JdUnionOpenGoodsQueryRequest;
-use JdSdk\JdUnionOpenPromotionByunionidGetRequest;
-use JdSdk\JdUnionOpenOrderQueryGetRequest;
-use JdSdk\JdUnionOpenOrderBonusQueryRequest;
+use JdSdk\request\JdUnionOpenGoodsQueryRequest;
+use JdSdk\request\JdUnionOpenPromotionByunionidGetRequest;
+use JdSdk\request\JdUnionOpenOrderQueryGetRequest;
+use JdSdk\request\JdUnionOpenOrderBonusQueryRequest;
 
 class OauthClientTest
 {
