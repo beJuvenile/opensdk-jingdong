@@ -13,9 +13,9 @@
     "version": "v2.0.0",
     "require": {
         "php": ">=7.0.0",
-      "ext-curl": "*",
-      "ext-json": "*",
-      "ext-simplexml": "*"
+        "ext-curl": "*",
+        "ext-json": "*",
+        "ext-simplexml": "*"
     },
     "autoload": {
         "psr-4": {

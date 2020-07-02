@@ -8,18 +8,15 @@
 ~~~php
 require 'vendor/autoload.php';
 
-use OpenSDK\PinDuoDuo\Client;
-use OpenSDK\PinDuoDuo\Requests\DdkCmsPromUrlGenerateRequest;
+use OpenSDK\JingDong\Client;
+use OpenSDK\JingDong\Request\BizAddressAllProvincesQueryRequest;
 
 $c = new Client();
-$c->appKey = 'You are appKey';
-$c->appSecret = 'You are appSecret';
-$req = new DdkCmsPromUrlGenerateRequest();
-$req->setWeAppWebViewShortUrl(true);
-$req->setWeAppWebViewUrl(true);
-$req->setPidList(['xxxx_xxxxx']);
-$c->setRequest($req);
-$result = $c->execute();
+$c->appKey = $this->appKey;
+$c->appSecret = $this->appSecret;
+$c->version = '1.0';
+$req = new BizAddressAllProvincesQueryRequest();
+$result = $c->execute($req, 'd411506e3a694722b75cb5296f6fd773xmtu');
 
 var_dump($result);
 ~~~

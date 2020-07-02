@@ -1,8 +1,8 @@
 <?php
 /**
  *
- * User: 康荨歌歌歌
- * Date: 2018/5/24
+ * User: Ken.Zhang <kenphp@yeah.net>
+ * Date: 2020/7/2
  */
 namespace OpenSDK\JingDong;
 
@@ -25,8 +25,6 @@ class Client
     public $version = '2.0';
 
     public $format = 'json';
-
-    private $charset = 'UTF-8';
 
     private $jsonParamKey = '360buy_param_json';
 
@@ -132,27 +130,12 @@ class Client
         }
 
         //解析JD返回结果
-        $respWellFormed = false;
-        if ('json' == $this->format) {
-            $respObject = json_decode($resp);
-            if (null !== $respObject) {
-                $respWellFormed = true;
-            }
-        } else if('xml' == $this->format) {
-            $respObject = @simplexml_load_string($resp);
-            if (false !== $respObject) {
-                $respWellFormed = true;
-            }
+        $response = json_decode($resp, true);
+        if (isset($response['error_response'])) {
+            return $response['error_response'];
+        } else {
+            return $response[str_replace('.', '_', $request->getApiMethodName()) . '_responce'];
         }
-
-        //返回的HTTP文本不是标准JSON或者XML，记下错误日志
-        if (false === $respWellFormed) {
-            $result->code = 0;
-            $result->msg = 'HTTP_RESPONSE_NOT_WELL_FORMED';
-            return $result;
-        }
-
-        return $respObject;
     }
 
     private function getCurrentTimeFormatted()
