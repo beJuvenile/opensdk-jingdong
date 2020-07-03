@@ -108,6 +108,7 @@ class Client
         $accessToken && $sysParams['access_token'] = $accessToken;
 
         //获取业务参数
+        $request->check();
         $apiParams = $request->getApiParas();
         $sysParams[$this->jsonParamKey] = $apiParams;
 
